@@ -1,0 +1,51 @@
+#N canvas 521 23 504 350 12;
+#X obj 134 114 nvs/tvap~;
+#X obj 88 51 phasor~ 100;
+#X obj 329 241 osc~ 50;
+#X obj 329 266 *~;
+#X obj 337 53 vsl 15 128 1 10000 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 387 53 vsl 15 128 1 10000 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6000 1;
+#X msg 337 189 \$1 50;
+#X obj 337 213 line~;
+#X msg 387 189 \$1 50;
+#X obj 387 213 line~;
+#X obj 287 53 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6600 1;
+#X msg 287 217 \$1 50;
+#X obj 287 241 line~;
+#X obj 329 290 +~;
+#X text 280 25 f_pi;
+#X text 323 25 mod_idx;
+#X text 383 25 f_b;
+#X text 386 240 modulator;
+#X obj 287 189 mtof;
+#X obj 54 139 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 54 275 dbtorms;
+#X msg 54 299 \$1 50;
+#X obj 54 323 line~;
+#X obj 134 138 *~;
+#X obj 134 162 dac~;
+#X connect 0 0 23 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 13 0;
+#X connect 4 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 1;
+#X connect 8 0 9 0;
+#X connect 9 0 0 2;
+#X connect 10 0 18 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 1;
+#X connect 13 0 0 1;
+#X connect 18 0 11 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 1;
+#X connect 23 0 24 0;
+#X connect 23 0 24 1;
